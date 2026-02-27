@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2023 Research Project — Siddharth Matia</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/lightbox.js" defer></script>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article class="project-page">
+
+      <nav class="breadcrumb">
+        <a href="../projects.html">Projects</a>
+        <span>/</span>
+        2023 Research Project
+      </nav>
+
+      <header class="project-page-header">
+        <div class="project-icon-lg">📐</div>
+        <h1>Double Pendulum Dynamics</h1>
+        <div class="project-meta">
+          <span class="tag">Research</span>
+          <span class="tag">Python</span>
+          <span class="tag">CUDA</span>
+          <span class="tag">Numerical Methods</span>
+          <span class="tag">2023</span>
+        </div>
+      </header>
+
+      <div class="project-page-body">
+
+        <div class="highlight-box">
+          <p>
+            Single-author research paper studying the chaotic properties of the double pendulum system,
+            conducted in collaboration with Dr. Christian Hölbling from the University of Wuppertal,
+            Germany.
+          </p>
+        </div>
+
+        <h2>Background</h2>
+        <p>
+          The double pendulum is a deceptively simple mechanical system — two pendulums attached
+          end-to-end — that exhibits profoundly complex, chaotic behavior. Small differences in
+          initial conditions lead to wildly divergent trajectories, making it a canonical example
+          of deterministic chaos and a rich subject for computational study.
+        </p>
+        <p>
+          This project was undertaken as independent research under the mentorship of
+          <strong style="color: var(--text-primary);">Dr. Christian Hölbling</strong>, a theoretical
+          physicist at the University of Wuppertal. The work resulted in a single-author paper.
+        </p>
+
+        <h2>Research Goals</h2>
+        <ul>
+          <li>Numerically simulate the double pendulum across a large space of initial conditions</li>
+          <li>Characterize chaotic regions of phase space and identify sensitivity to initial conditions</li>
+          <li>Apply multiple numerical integration methods and compare their accuracy and stability</li>
+          <li>Leverage parallel computation to make large-scale simulation feasible</li>
+        </ul>
+
+        <h2>Methods &amp; Tools</h2>
+        <p>
+          The simulation involved solving a system of coupled, nonlinear ordinary differential equations
+          governing the motion of the double pendulum. Several numerical approaches were implemented
+          and compared:
+        </p>
+        <ul>
+          <li>Euler method integration</li>
+          <li>Runge-Kutta 2nd-order integration (RK2)</li>
+          <li>Runge-Kutta 4th-order integration (RK4)</li>
+        </ul>
+        <p>
+          To handle the computational load of sweeping over dense initial condition grids, the
+          simulation was parallelized using <strong style="color: var(--text-primary);">CUDA</strong>
+          for GPU acceleration, dramatically reducing runtime for high-resolution parameter sweeps.
+        </p>
+
+        <h2>Technologies</h2>
+        <ul>
+          <li>Python (NumPy, SciPy, Matplotlib) for prototyping and visualization</li>
+          <li>CUDA / C++ for GPU-accelerated parallel simulation</li>
+          <li>Linear algebra and multi-dimensional ODE solvers</li>
+          <li>LaTeX for the final paper writeup</li>
+        </ul>
+
+        <h2>Key Findings</h2>
+        <p>
+          The research produced high-resolution visualizations of the double pendulum's phase space,
+          clearly delineating chaotic and quasi-periodic regions. The GPU-accelerated approach enabled
+          grid sizes that would have been impractical on CPU alone, yielding finer detail in the
+          boundary regions between ordered and chaotic motion.
+        </p>
+        <p>
+          Lyapunov exponent maps were computed across initial condition space, providing a quantitative
+          measure of the local sensitivity to perturbations and connecting simulation results to
+          theoretical predictions from chaos theory.
+        </p>
+
+        <h2>Mentorship</h2>
+        <p>
+          This project was conducted with guidance from
+          <strong style="color: var(--text-primary);">Dr. Christian Hölbling</strong>, University of
+          Wuppertal (Germany). The research was carried out independently, with Dr. Hölbling providing
+          mentorship on theoretical framing and methodology.
+        </p>
+
+        <h2>Key Figures</h2>
+        <div class="photo-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <figure>
+            <img src="../research1.png" alt="Research figure 1" />
+            <figcaption>Figure 1</figcaption>
+          </figure>
+          <figure>
+            <img src="../research2.png" alt="Research figure 2" />
+            <figcaption>Figure 2</figcaption>
+          </figure>
+          <figure>
+            <img src="../research3.png" alt="Research figure 3" />
+            <figcaption>Figure 3</figcaption>
+          </figure>
+        </div>
+
+        <h2>Downloads</h2>
+        <p>The abstract and full report are available below:</p>
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+          <a href="../doublePendulumAbstract.pdf" download class="btn btn-outline">
+            &#8595; Download Abstract
+          </a>
+          <a href="../doublePendulumReport.pdf" download class="btn btn-outline">
+            &#8595; Download Full Report
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>Designed &amp; Built by Siddharth Matia</p>
+  </footer>
+
+</body>
+</html>
